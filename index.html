@@ -1,112 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Trending YouTube</title>
-    <link href="/static/css" rel="stylesheet" type="text/css">
-<link href="/static/css(1)" rel="stylesheet" type="text/css">
-<link href="/static/css(2)" rel="stylesheet" type="text/css">
-<link href="/static/css(3)" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="/static/style.css">
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <div class="login">
-      <h1>Predict trendability of YouTube Videos</h1>
-        <h3>Enter the following values to predict the trendability of your YouTube Video:</h3>
 
-        <!-- Main input for Recieving Query to our ML -->
-        <form action="app.py" method="post">
-          <label for="category_id">Video Category</label>
-          <select name="category" id="category_id">
-            <option value="1">Film & Animation</option>
-            <option value="2">Autos & Vehicles</option>
-            <option value="10">Music</option>
-            <option value="15">Pets & Animals</option>
-            <option value="17">Sports</option>
-            <option value="18">Short Movies</option>
-            <option value="19">Travel & Events</option>
-            <option value="20">Gaming</option>
-            <option value="21">Videoblogging</option>
-            <option value="22">People & Blogs</option>
-            <option value="23">Comedy</option>
-            <option value="24">Entertainment</option>
-            <option value="25">News & Politics</option>
-            <option value="26">Howto & Style</option>
-            <option value="27">Education</option>
-            <option value="28">Science & Technology</option>
-            <option value="29">Nonprofits & Activism</option>
-            <option value="30">Movies</option>
-            <option value="31">Anime/Animation</option>
-            <option value="32">Action/Adventure</option>
-            <option value="33">Classics</option>
-            <option value="34">Comedy</option>
-            <option value="35">Documentary</option>
-            <option value="36">Drama</option>
-            <option value="37">Family</option>
-            <option value="38">Foreign</option>
-            <option value="39">Horror</option>
-            <option value="40">Sci-Fi/Fantasy</option>
-            <option value="41">Thriller</option>
-            <option value="42">Shorts</option>
-            <option value="43">Shows</option>
-            <option value="44">Trailers</option>
-          </select>    
-          <br>
-          <div id="wrapper">
-          <label for="yes_no_radio">Have comments been disabled?</label>
-          <p>
-            <input type="radio" name="yes_no"
-            checked>Yes</input>
-          </p>
-          <p>
-            <input type="radio"
-            name="yes_no">No</input>
-          </p>
-        </div>
-          <br>
-          <div id="wrapper">
-          <label for="yes_no_radio2">Have ratings been disabled?</label>
-          <p>
-            <input type="radio" name="yes_no2"
-            checked>Yes</input>
-          </p>
-          <p>
-            <input type="radio"
-            name="yes_no2">No</input>
-          </div>
-          </p>
-          <label for="month">Published Month</label>
-          <select name="month" id="published_month">
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <br>
-          <br>
-          <button type="submit" class="btn">Predict</button>
-        </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Trending YouTube</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
 
-        <br>
-        <br>
-        <br>
-        {{ prediction_text }}
-    
+<body class="bg-dark">
+  <div class="wrapper">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">Trending on YouTube</a>
+    </nav>
+  </div>
+  <div class="jumbotron">
+    <h1 class="display-4">Predict trendability of YouTube Videos</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Can the trendability of YouTube Videos be predicted based on category?<br> <small><i>(possibly)</i></small>
+        </h3>
+      </div>
+      <div class="col-md-8">
+        <p>
+          TEXT EXPLAINING PROJECT
+        </p>
+      </div>
     </div>
-  </body>
-</html>
+  </div>
 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="login">
+          <br>
+          <br>
+          <h4>Enter the following values to predict the trendability of your YouTube Video:</h3>
+          <br>
+          <br>
+
+
+          <!-- Main input for Recieving Query to our ML -->
+          <form action="app.py" method="post">
+            <label for="category_id">Video Category</label>
+            <select name="category" id="category_id">
+              <option value="1">Film & Animation</option>
+              <option value="2">Autos & Vehicles</option>
+              <option value="10">Music</option>
+              <option value="15">Pets & Animals</option>
+              <option value="17">Sports</option>
+              <option value="18">Short Movies</option>
+              <option value="19">Travel & Events</option>
+              <option value="20">Gaming</option>
+              <option value="21">Videoblogging</option>
+              <option value="22">People & Blogs</option>
+              <option value="23">Comedy</option>
+              <option value="24">Entertainment</option>
+              <option value="25">News & Politics</option>
+              <option value="26">Howto & Style</option>
+              <option value="27">Education</option>
+              <option value="28">Science & Technology</option>
+              <option value="29">Nonprofits & Activism</option>
+              <option value="30">Movies</option>
+              <option value="31">Anime/Animation</option>
+              <option value="32">Action/Adventure</option>
+              <option value="33">Classics</option>
+              <option value="34">Comedy</option>
+              <option value="35">Documentary</option>
+              <option value="36">Drama</option>
+              <option value="37">Family</option>
+              <option value="38">Foreign</option>
+              <option value="39">Horror</option>
+              <option value="40">Sci-Fi/Fantasy</option>
+              <option value="41">Thriller</option>
+              <option value="42">Shorts</option>
+              <option value="43">Shows</option>
+              <option value="44">Trailers</option>
+            </select>
+            <br>
+            <div id="wrapper">
+              <label for="yes_no_radio">Have comments been disabled?</label>
+              <p>
+                <input type="radio" name="yes_no" checked>Yes</input>
+              </p>
+              <p>
+                <input type="radio" name="yes_no">No</input>
+              </p>
+            </div>
+            <br>
+            <div id="wrapper">
+              <label for="yes_no_radio2">Have ratings been disabled?</label>
+              <p>
+                <input type="radio" name="yes_no2" checked>Yes</input>
+              </p>
+              <p>
+                <input type="radio" name="yes_no2">No</input>
+            </div>
+            </p>
+            <label for="month">Published Month</label>
+            <select name="month" id="published_month">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" class="btn">Predict</button>
+          </form>
+          <br>
+          <br>
+          {{ prediction_text }}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
