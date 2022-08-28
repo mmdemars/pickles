@@ -46,9 +46,9 @@
 
 
           <!-- Main input for Recieving Query to our ML -->
-          <form action="app.py" method="post">
-            <label for="category_id">Video Category</label>
-            <select name="category" id="category_id">
+          <form action="/predict" method="POST">
+            <label for="category">Video Category</label>
+            <select name="category_id" id="category">
               <option value="1">Film & Animation</option>
               <option value="2">Autos & Vehicles</option>
               <option value="10">Music</option>
@@ -83,27 +83,23 @@
               <option value="44">Trailers</option>
             </select>
             <br>
-            <div id="wrapper">
-              <label for="yes_no_radio">Have comments been disabled?</label>
-              <p>
-                <input type="radio" name="yes_no" checked>Yes</input>
-              </p>
-              <p>
-                <input type="radio" name="yes_no">No</input>
-              </p>
-            </div>
             <br>
-            <div id="wrapper">
-              <label for="yes_no_radio2">Have ratings been disabled?</label>
-              <p>
-                <input type="radio" name="yes_no2" checked>Yes</input>
-              </p>
-              <p>
-                <input type="radio" name="yes_no2">No</input>
-            </div>
-            </p>
+            <label for="comments">Are comments disabled?</label>
+            <select name="comments_disabled" id="comments">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+            <br>
+            <br>
+                <label for="ratings">Are ratings disabled?</label>
+                <select name="ratings_disabled" id="ratings">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+            <br>
+            <br>
             <label for="month">Published Month</label>
-            <select name="month" id="published_month">
+            <select name="published_month" id="month">
               <option value="1">January</option>
               <option value="2">February</option>
               <option value="3">March</option>

@@ -1,11 +1,13 @@
 #import libraries
 import numpy as np
+from joblib import load
 from flask import Flask, request, jsonify, render_template
 import pickle
 
 #Initialize the flask App
 app = Flask(__name__)
 model = pickle.load(open('Hours_trending_US.pkl', 'rb'))
+#model = load("BRFRegressor.joblib")
 
 #default page of our web-app
 @app.route('/')
@@ -15,26 +17,23 @@ def home():
 #To use the predict button in our web-app
 @app.route('/predict',methods=['POST'])
 def predict():
+    print(request.form)
+    print("snuffaluffagus")
     #For rendering results on HTML GUI
     int_features = [float(x) for x in request.form.values()]
+    print('heffalumps')
+    print(int_features)
     final_features = [np.array(int_features)]
+    print("woozles")
+    print(final_features)
+    print("THIS IS SO FUCKING CLOSE TO WORKING")
     prediction = model.predict(final_features)
+    print(prediction)
 
     output = round(prediction[0], 2) 
 
     return render_template('index.html', prediction_text='Approximate days until video trends:{}'.format(output))
-
-
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-    '''
-    For direct API calls trought request
-    '''
-    data = request.get_json(force=True)
-    prediction = model.predict([np.array(list(data.values()))])
-
-    output = prediction[0]
-    return jsonify(output)
+    #return render_template('index.html')
 
 
 if __name__ == "__main__":
