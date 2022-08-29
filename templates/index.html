@@ -2,33 +2,46 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Trending YouTube</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Time to Trending on YouTube</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" <link
+    rel="stylesheet" href="../static/css/style.css">
 </head>
 
-<body class="bg-dark">
+<body class="container">
   <div class="wrapper">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-      <a class="navbar-brand" href="index.html">Trending on YouTube</a>
+      <a class="navbar-brand" style="color:white;">When will it trend?</a>
     </nav>
   </div>
-  <div class="jumbotron">
-    <h1 class="display-4">Predict trendability of YouTube Videos</h1>
+  <div class="col-md-12 jumbotron text-center">
+    <h1 class="display-4"></h1>
   </div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4">
-        <h3>Can the trendability of YouTube Videos be predicted based on category?<br> <small><i>(possibly)</i></small>
-        </h3>
+        <h4>Can the time until a YouTube video trends be predicted based on category?<br> <small><i>(sort
+              of)</i></small>
+        </h4>
       </div>
       <div class="col-md-8">
-        <p>
-          TEXT EXPLAINING PROJECT
+        <p align="left" style="font-size: 14px">
+          We looked at data for over 40,950 trending YouTube video from different countries to identity factors that
+          contribute to a successful trending YouTube video. Once identifying key features that predict trendability,
+          we'll be building a model to estimate the amount of time until a YouTube may trend.
+        <ul>
+          <li>Which video category (e.g., Entertainment, Gaming, Comedy, etc.) has the largest number of trending videos
+            and which video remained the most on the trending videos list?
+          </li>
+          <li>
+            Output variations - how long does it take to get to trending?
+          </li>
+          <li>
+            Can video subject predict view count?
+          </li>
+        </ul>
         </p>
       </div>
     </div>
@@ -40,91 +53,127 @@
         <div class="login">
           <br>
           <br>
-          <h4>Enter the following values to predict the trendability of your YouTube Video:</h3>
-          <br>
-          <br>
-
-
-          <!-- Main input for Recieving Query to our ML -->
-          <form action="/predict" method="POST">
-            <label for="category">Video Category</label>
-            <select name="category_id" id="category">
-              <option value="1">Film & Animation</option>
-              <option value="2">Autos & Vehicles</option>
-              <option value="10">Music</option>
-              <option value="15">Pets & Animals</option>
-              <option value="17">Sports</option>
-              <option value="18">Short Movies</option>
-              <option value="19">Travel & Events</option>
-              <option value="20">Gaming</option>
-              <option value="21">Videoblogging</option>
-              <option value="22">People & Blogs</option>
-              <option value="23">Comedy</option>
-              <option value="24">Entertainment</option>
-              <option value="25">News & Politics</option>
-              <option value="26">Howto & Style</option>
-              <option value="27">Education</option>
-              <option value="28">Science & Technology</option>
-              <option value="29">Nonprofits & Activism</option>
-              <option value="30">Movies</option>
-              <option value="31">Anime/Animation</option>
-              <option value="32">Action/Adventure</option>
-              <option value="33">Classics</option>
-              <option value="34">Comedy</option>
-              <option value="35">Documentary</option>
-              <option value="36">Drama</option>
-              <option value="37">Family</option>
-              <option value="38">Foreign</option>
-              <option value="39">Horror</option>
-              <option value="40">Sci-Fi/Fantasy</option>
-              <option value="41">Thriller</option>
-              <option value="42">Shorts</option>
-              <option value="43">Shows</option>
-              <option value="44">Trailers</option>
-            </select>
+          <h4>Enter the following values to predict the time until trending of your YouTube Video:</h3>
             <br>
             <br>
-            <label for="comments">Are comments disabled?</label>
-            <select name="comments_disabled" id="comments">
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
+            <!-- Main input for Recieving Query to our ML -->
+            <form action="/predict" method="POST">
+              <label for="category">Video Category</label>
+              <select name="category_id" id="category">
+                <option value="1">Film & Animation</option>
+                <option value="2">Autos & Vehicles</option>
+                <option value="10">Music</option>
+                <option value="15">Pets & Animals</option>
+                <option value="17">Sports</option>
+                <option value="18">Short Movies</option>
+                <option value="19">Travel & Events</option>
+                <option value="20">Gaming</option>
+                <option value="21">Videoblogging</option>
+                <option value="22">People & Blogs</option>
+                <option value="23">Comedy</option>
+                <option value="24">Entertainment</option>
+                <option value="25">News & Politics</option>
+                <option value="26">Howto & Style</option>
+                <option value="27">Education</option>
+                <option value="28">Science & Technology</option>
+                <option value="29">Nonprofits & Activism</option>
+                <option value="30">Movies</option>
+                <option value="31">Anime/Animation</option>
+                <option value="32">Action/Adventure</option>
+                <option value="33">Classics</option>
+                <option value="34">Comedy</option>
+                <option value="35">Documentary</option>
+                <option value="36">Drama</option>
+                <option value="37">Family</option>
+                <option value="38">Foreign</option>
+                <option value="39">Horror</option>
+                <option value="40">Sci-Fi/Fantasy</option>
+                <option value="41">Thriller</option>
+                <option value="42">Shorts</option>
+                <option value="43">Shows</option>
+                <option value="44">Trailers</option>
+              </select>
+              <br>
+              <br>
+              <label for="comments">Are comments disabled?</label>
+              <select name="comments_disabled" id="comments">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+              <br>
+              <br>
+              <label for="ratings">Are ratings disabled?</label>
+              <select name="ratings_disabled" id="ratings">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+              <br>
+              <br>
+              <label for="month">Published Month</label>
+              <select name="published_month" id="month">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <br>
+              <br>
+              <button type="submit" class="btn">Predict</button>
+            </form>
             <br>
             <br>
-                <label for="ratings">Are ratings disabled?</label>
-                <select name="ratings_disabled" id="ratings">
-                  <option value="0">No</option>
-                  <option value="1">Yes</option>
-                </select>
-            <br>
-            <br>
-            <label for="month">Published Month</label>
-            <select name="published_month" id="month">
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
-            </select>
-            <br>
-            <br>
-            <button type="submit" class="btn">Predict</button>
-          </form>
-          <br>
-          <br>
-          {{ prediction_text }}
+            <strong>{{ prediction_text }}</strong>
 
 
         </div>
       </div>
     </div>
+  </div>
+  <br>
+  <br>
+  <div>
+    <h4>What is "trending?"</h2>
+      <p>Trending helps viewers see what’s happening on YouTube and in the world. Trending aims to surface videos and
+        shorts that a wide range of viewers would find interesting. Some trends are predictable, like a new song from a
+        popular artist or a new movie trailer. Others are surprising, like a viral video.</p>
+      <h4>What determines if a video is ranked on Trending?</h4>
+      <p>Amongst the many great new videos on YouTube on any given day, Trending can only show a limited number.
+        Trending aims to surface videos that:</p>
+      <ul>
+        <li> Are appealing to a wide range of viewers
+        </li>
+        <li> Are not misleading, clickbaity or sensational
+        </li>
+        <li> Capture the breadth of what’s happening on YouTube and in the world
+        </li>
+        <li> Showcase a diversity of creators
+        </li>
+        <li> Ideally, are surprising or novel
+        </li>
+      </ul>
+      <p>Trending aims to balance all of these considerations. To achieve this, Trending considers many signals,
+        including (but not limited to):</p>
+      <ul>
+        <li> View count
+        </li>
+        <li> How quickly the video is generating views (i.e. “temperature”)
+
+        </li>
+        <li> Where views are coming from, including outside of YouTube
+        </li>
+        <li> The age of the video
+        </li>
+        <li>How the video performs compared to other recent uploads from the same channel</li>
+      </ul>
+      <p>Source: <a href="https://support.google.com/youtube/answer/7239739?hl=en" target="_blank">YouTube Help</a></p>
   </div>
 </body>
 

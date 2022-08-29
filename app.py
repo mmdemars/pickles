@@ -2,12 +2,12 @@
 import numpy as np
 from joblib import load
 from flask import Flask, request, jsonify, render_template
-import pickle
+#import pickle
 
 #Initialize the flask App
 app = Flask(__name__)
-model = pickle.load(open('Hours_trending_US.pkl', 'rb'))
-#model = load("BRFRegressor.joblib")
+#model = pickle.load(open('Hours_trending_US.pkl', 'rb'))
+model = load("Hours_trending_US.joblib")
 
 #default page of our web-app
 @app.route('/')
@@ -32,7 +32,7 @@ def predict():
 
     output = round(prediction[0], 2) 
 
-    return render_template('index.html', prediction_text='Approximate days until video trends:{}'.format(output))
+    return render_template('index.html', prediction_text='Approximate days until video trends: {:.2f}'.format(output/24))
     #return render_template('index.html')
 
 
