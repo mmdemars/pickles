@@ -3,8 +3,8 @@ body {
   }
   
 .jumbotron {
-    background: url(placeholder.png) center center no-repeat;
-    background-size: 50% 50%;
+    background: url("youtubeheader.gif") center center no-repeat;
+    background-size: 100%;
     text-align: center;
 }
 
