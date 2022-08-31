@@ -7,14 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Time to Trending on YouTube</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel= "stylesheet" type= "text/css" href= "static/style.css">
 
 </head>
 
 <body class="container">
 
-  <divclass="container-fluid">
+  <div class="container-fluid">
     <div class="row"> 
-  <img src="static/css/youtubeheader.gif" width="1000">
+  <img src="static/css/youtubeheader.gif" width="1000" align="center" class="centerImage">
+    
     </div>  
   </div>
 <br>
@@ -27,7 +29,7 @@
         </h4>
       </div>
       <div class="col-md-8">
-        <p align="left" style="font-size: 14px">
+        <p style="text-align:left;" style="font-size: 14px">
           We looked at data for over 40,950 trending YouTube video from different countries to identity factors that
           contribute to a successful trending YouTube video. Once identifying key features that predict trendability,
           we'll be building a model to estimate the amount of time until a YouTube may trend.
@@ -53,84 +55,92 @@
         <div class="login">
           <br>
           <br>
-          <h4>Enter the following values to predict the time until trending of your YouTube Video:</h3>
-            <br>
-            <br>
-            <!-- Main input for Recieving Query to our ML -->
-            <form action="/predict" method="POST">
-              <label for="category">Video Category</label>
-              <select name="category_id" id="category">
-                <option value="1">Film & Animation</option>
-                <option value="2">Autos & Vehicles</option>
-                <option value="10">Music</option>
-                <option value="15">Pets & Animals</option>
-                <option value="17">Sports</option>
-                <option value="18">Short Movies</option>
-                <option value="19">Travel & Events</option>
-                <option value="20">Gaming</option>
-                <option value="21">Videoblogging</option>
-                <option value="22">People & Blogs</option>
-                <option value="23">Comedy</option>
-                <option value="24">Entertainment</option>
-                <option value="25">News & Politics</option>
-                <option value="26">Howto & Style</option>
-                <option value="27">Education</option>
-                <option value="28">Science & Technology</option>
-                <option value="29">Nonprofits & Activism</option>
-                <option value="30">Movies</option>
-                <option value="31">Anime/Animation</option>
-                <option value="32">Action/Adventure</option>
-                <option value="33">Classics</option>
-                <option value="34">Comedy</option>
-                <option value="35">Documentary</option>
-                <option value="36">Drama</option>
-                <option value="37">Family</option>
-                <option value="38">Foreign</option>
-                <option value="39">Horror</option>
-                <option value="40">Sci-Fi/Fantasy</option>
-                <option value="41">Thriller</option>
-                <option value="42">Shorts</option>
-                <option value="43">Shows</option>
-                <option value="44">Trailers</option>
-              </select>
-              <br>
-              <br>
-              <label for="comments">Are comments disabled?</label>
-              <select name="comments_disabled" id="comments">
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-              </select>
-              <br>
-              <br>
-              <label for="ratings">Are ratings disabled?</label>
-              <select name="ratings_disabled" id="ratings">
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-              </select>
-              <br>
-              <br>
-              <label for="month">Published Month</label>
-              <select name="published_month" id="month">
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-              <br>
-              <br>
-              <button type="submit" class="btn">Predict</button>
-            </form>
-            <br>
-            <br>
-            <strong>{{ prediction_text }}</strong>
+          <table class="center" style="width:70%">
+            <tr>
+              <td>
+                <h4>Enter the following values to predict the time until trending of your YouTube Video:</h3>
+                  <br>
+                  <br>
+                  <!-- Main input for Recieving Query to our ML -->
+                  <form action="/predict" method="POST">
+                    <label for="category">Video Category</label>
+                    <select name="category_id" id="category">
+                      <option value="1">Film & Animation</option>
+                      <option value="2">Autos & Vehicles</option>
+                      <option value="10">Music</option>
+                      <option value="15">Pets & Animals</option>
+                      <option value="17">Sports</option>
+                      <option value="18">Short Movies</option>
+                      <option value="19">Travel & Events</option>
+                      <option value="20">Gaming</option>
+                      <option value="21">Videoblogging</option>
+                      <option value="22">People & Blogs</option>
+                      <option value="23">Comedy</option>
+                      <option value="24">Entertainment</option>
+                      <option value="25">News & Politics</option>
+                      <option value="26">Howto & Style</option>
+                      <option value="27">Education</option>
+                      <option value="28">Science & Technology</option>
+                      <option value="29">Nonprofits & Activism</option>
+                      <option value="30">Movies</option>
+                      <option value="31">Anime/Animation</option>
+                      <option value="32">Action/Adventure</option>
+                      <option value="33">Classics</option>
+                      <option value="34">Comedy</option>
+                      <option value="35">Documentary</option>
+                      <option value="36">Drama</option>
+                      <option value="37">Family</option>
+                      <option value="38">Foreign</option>
+                      <option value="39">Horror</option>
+                      <option value="40">Sci-Fi/Fantasy</option>
+                      <option value="41">Thriller</option>
+                      <option value="42">Shorts</option>
+                      <option value="43">Shows</option>
+                      <option value="44">Trailers</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="comments">Are comments disabled?</label>
+                    <select name="comments_disabled" id="comments">
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="ratings">Are ratings disabled?</label>
+                    <select name="ratings_disabled" id="ratings">
+                      <option value="0">No</option>
+                      <option value="1">Yes</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="month">Published Month</label>
+                    <select name="published_month" id="month">
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn">Predict</button>
+                  </form>
+                  <br>
+                  <br>
+                  <strong>{{ prediction_text }}</strong>
+              </td>
+            </tr>
+
+          </table>
+          
 
 
         </div>
