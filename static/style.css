@@ -24,3 +24,7 @@ table, th, td {
   margin-left: auto;
   margin-right: auto;
 }
+
+.floatLeft { width: 50%; float: left; }
+.floatRight {width: 50%; float: right; }
+.container { overflow: hidden; }
