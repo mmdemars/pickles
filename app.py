@@ -19,18 +19,11 @@ def home():
 #To use the predict button in our web-app
 @app.route('/predict',methods=['POST'])
 def predict():
-    print(request.form)
-    print("snuffaluffagus")
     #For rendering results on HTML GUI
     int_features = [float(x) for x in request.form.values()]
-    print('heffalumps')
-    print(int_features)
     final_features = [np.array(int_features)]
-    print("woozles")
     print(final_features)
-    print("THIS IS SO FUCKING CLOSE TO WORKING")
     prediction = model.predict(final_features)
-    print(prediction)
 
     output = round(prediction[0], 2) 
 
@@ -40,22 +33,14 @@ def predict():
 #To use the predict button in our web-app
 @app.route('/predict2',methods=['POST'])
 def predict2():
-    print(request.form)
-    print("snuffaluffagus")
     #For rendering results on HTML GUI
     int_features = [float(x) for x in request.form.values()]
-    print('heffalumps')
-    print(int_features)
     final_features = [np.array(int_features)]
-    print("woozles")
-    print(final_features)
-    print("THIS IS SO FUCKING CLOSE TO WORKING")
     prediction2 = model2.predict(final_features)
-    print(prediction2)
 
     output = round(prediction2[0], 2) 
 
-    return render_template('index.html', prediction_text2='Predicted views until: {:.0f}'.format(output))
+    return render_template('index.html', prediction_text2='Predicted views: {:.0f}'.format(output))
     #return render_template('index.html')
 
 
