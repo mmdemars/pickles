@@ -5,3 +5,4 @@ sqlalchemy
 bson
 pymongo
 dnspython
+joblib==1.0.1
